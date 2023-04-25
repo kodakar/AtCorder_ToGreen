@@ -1,10 +1,11 @@
 from collections import deque
 
-ans =[]
+while True:
 
-w, h = map(int, input().split())
+    w, h = map(int, input().split())
 
-while w != 0 and h != 0:
+    if w == 0 and h == 0:
+        exit()
         
     c = [list(map(int, input().split())) for _ in range(2 * h - 1)]
 
@@ -66,5 +67,3 @@ while w != 0 and h != 0:
                     break
 
     print(dist[h-1][w-1])
-
-    w, h = map(int, input().split())
