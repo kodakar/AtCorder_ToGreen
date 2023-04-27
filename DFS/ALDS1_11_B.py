@@ -12,8 +12,6 @@ for _ in range(n):
 d = [-1 for _ in range(n)]
 f = [-1 for _ in range(n)]
 
-global count
-
 count = 1
 
 def DFS(start):
@@ -35,7 +33,3 @@ for i in range(n):
     DFS(i)
 
     print(i + 1, d[i], f[i])
-
-print(d,"/",f)
-print(nodes)
-print(count)
