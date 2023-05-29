@@ -10,4 +10,4 @@ for i in range(N):
 if a > N // 2:
     print("Yes")
 else:
-    print("Np")
+    print("No")
