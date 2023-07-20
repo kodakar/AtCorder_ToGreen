@@ -14,7 +14,6 @@ if sum <= K:
     exit()
 
 for i in range(len(a)):
-    print(sum,K)
     if sum <= K:
         print(a[i-1][0]+1)
         exit()
