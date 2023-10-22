@@ -1,20 +1,26 @@
+import sys
+
+sys.setrecursionlimit(10**6)
+
 H, W = map(int, input().split())
-S = [list(input()) for _ in range(H)]
+S = [[*input()] for _ in range(H)]
 
-count = 0
+def DFS(i, j):
+    if i < 0 or i >= H or j < 0 or j >= W or S[i][j] == '.':
+        return
+    
+    S[i][j] = "."
 
-for i in range(H):
-    for j in range(W):
-        if S[i][j] == "#":
-            stack = [(i, j)]
-            while stack:
-                x, y = stack.pop()
-                S[x][y] = "."
-                for dx in [-1, 0, 1]:
-                    for dy in [-1, 0, 1]:
-                        nx, ny = x + dx, y + dy
-                        if 0 <= nx < H and 0 <= ny < W and S[nx][ny] == "#":
-                            stack.append((nx, ny))
-            count += 1
+    for dx in [-1, 0, 1]:
+        for dy in [-1, 0, 1]:
+            DFS(i + dx, j + dy)
 
-print(count)
+cnt = 0
+
+for h in range(H):
+    for w in range(W):
+        if S[h][w] == "#":
+            DFS(h, w)
+            cnt += 1
+
+print(cnt)
