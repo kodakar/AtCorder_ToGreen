@@ -1,6 +1,5 @@
 N, K, Q = map(int, input().split())
 A = [int(input()) for _ in range(Q)]
-
 P = [K] * N
 
 for i in range(Q):

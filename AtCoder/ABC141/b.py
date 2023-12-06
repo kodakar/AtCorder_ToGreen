@@ -10,4 +10,5 @@ for i in range(len(S)):
             print("No")
             exit()
 
+
 print("Yes")
