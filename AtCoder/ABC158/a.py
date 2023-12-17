@@ -1,0 +1,1 @@
+print("Yes" if len({*input()}) != 1 else "No")
