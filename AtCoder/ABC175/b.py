@@ -1,11 +1,15 @@
 N = int(input())
 L = list(map(int, input().split()))
-print(L)
-ans = []
-for i in range(N):
-    for j in range(i+1, N):
-        for k in range(j+1, N):
-            if L[i] != L[j] != L[k]:
-                if abs(L[i]-L[j]) < L[k] < L[i] + L[j]:
-                    ans.append(sorted([L[i],L[j],L[k]]))
-print((ans))
+
+ans = 0
+
+for i in range(len(L)):
+    for j in range(i+1, len(L)):
+        for k in range(j+1, len(L)):
+            a = L[i]
+            b = L[j]
+            c = L[k]
+            if a != b and b != c and c != a:
+                if a + b > c and b + c > a and c + a > b:
+                    ans += 1
+print(ans)
